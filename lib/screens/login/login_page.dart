@@ -26,24 +26,22 @@ class LoginPage extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.35,
                   fit: BoxFit.cover,
                 ),
-                SafeArea(
-                  child: Positioned(
-                    top: 10,
-                    right: 16,
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(builder: (_) => const MainScreen()),
-                        );
-                      },
-                      child: Text(
-                        'Skip >',
-                        style: TextStyle(
-                          color: const Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
+                Positioned(
+                  top: 10,
+                  right: 16,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (_) => const MainScreen()),
+                      );
+                    },
+                    child: Text(
+                      'Skip >',
+                      style: TextStyle(
+                        color: const Color.fromARGB(255, 255, 255, 255),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ),
