@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'login_controller.dart';
-import '../home/home_page.dart';
+import '../main/main_screen.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -18,11 +18,10 @@ class LoginPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            // Top Image Section
             Stack(
               children: [
                 Image.asset(
-                  'assets/images/login.jpg', // your image
+                  'assets/images/login.jpg',
                   width: double.infinity,
                   height: MediaQuery.of(context).size.height * 0.35,
                   fit: BoxFit.cover,
@@ -35,7 +34,7 @@ class LoginPage extends StatelessWidget {
                       onTap: () {
                         Navigator.pushReplacement(
                           context,
-                          MaterialPageRoute(builder: (_) => const HomePage()),
+                          MaterialPageRoute(builder: (_) => const MainScreen()),
                         );
                       },
                       child: Text(
@@ -54,7 +53,6 @@ class LoginPage extends StatelessWidget {
 
             const SizedBox(height: 24),
 
-            // Login Text
             Align(
               alignment: Alignment.centerLeft,
               child: Padding(
@@ -68,7 +66,6 @@ class LoginPage extends StatelessWidget {
 
             const SizedBox(height: 24),
 
-            // Email Field
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
@@ -98,7 +95,6 @@ class LoginPage extends StatelessWidget {
 
             const SizedBox(height: 20),
 
-            // Password Field
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
@@ -136,7 +132,6 @@ class LoginPage extends StatelessWidget {
 
             const SizedBox(height: 12),
 
-            // Forgot Password
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Align(
@@ -161,7 +156,6 @@ class LoginPage extends StatelessWidget {
 
             const SizedBox(height: 24),
 
-            // Login Button
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: SizedBox(
@@ -179,7 +173,7 @@ class LoginPage extends StatelessWidget {
                     if (success) {
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (_) => const HomePage()),
+                        MaterialPageRoute(builder: (_) => const MainScreen()),
                       );
                     }
                   },

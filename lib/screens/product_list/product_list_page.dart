@@ -153,7 +153,7 @@ class _ProductListPageState extends State<ProductListPage> {
                     ),
             ),
           ),
-          // Sort & Filter Bar
+          
           Container(
             height: 60,
             decoration: BoxDecoration(
@@ -228,7 +228,7 @@ class _ProductListPageState extends State<ProductListPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Image Stack
+            
             Expanded(
               child: Stack(
                 children: [
@@ -248,7 +248,7 @@ class _ProductListPageState extends State<ProductListPage> {
                           const Icon(Icons.image_not_supported),
                     ),
                   ),
-                  // Discount Badge
+                  
                   Positioned(
                     top: 8,
                     left: 8,
@@ -262,7 +262,7 @@ class _ProductListPageState extends State<ProductListPage> {
                         borderRadius: BorderRadius.circular(4),
                       ),
                       child: const Text(
-                        '22% off', // Placeholder for actual discount calc
+                        '22% off', 
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 10,
@@ -271,7 +271,7 @@ class _ProductListPageState extends State<ProductListPage> {
                       ),
                     ),
                   ),
-                  // Wishlist Icon
+                  
                   Positioned(
                     top: 8,
                     right: 8,
@@ -325,7 +325,7 @@ class _ProductListPageState extends State<ProductListPage> {
                     ],
                   ),
                   const SizedBox(height: 12),
-                  // Add Button or Quantity Selector
+                  
                   Consumer<CartController>(
                     builder: (context, cart, child) {
                       final quantity = cart.cartItems[product] ?? 0;

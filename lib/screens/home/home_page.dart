@@ -177,7 +177,7 @@ class _HomePageState extends State<HomePage> {
 
                     const SizedBox(height: 24),
 
-                    // 🔶 Categories
+                
                     sectionTitle('Categories'),
                     SizedBox(
                       height: 110,
@@ -233,7 +233,7 @@ class _HomePageState extends State<HomePage> {
 
                     const SizedBox(height: 16),
 
-                    // 🔶 Recent Views
+                    
                     if (controller.homeData?.recentViews.isNotEmpty ??
                         false) ...[
                       sectionTitle(
@@ -267,7 +267,7 @@ class _HomePageState extends State<HomePage> {
 
                     const SizedBox(height: 16),
 
-                    // 🔶 Flash Sail
+                    
                     sectionTitle(
                       'Flash Sail',
                       onTap: () {
@@ -283,7 +283,7 @@ class _HomePageState extends State<HomePage> {
 
                     const SizedBox(height: 16),
 
-                    // 🔶 Suggested Products
+                    
                     if (controller.homeData?.suggestedProducts.isNotEmpty ??
                         false) ...[
                       sectionTitle(
@@ -301,13 +301,13 @@ class _HomePageState extends State<HomePage> {
                       const SizedBox(height: 16),
                     ],
 
-                    // 🔶 Banner 2 (Promotional)
+                    
                     if (controller.homeData?.banner2.isNotEmpty ?? false)
                       promoBanner(controller.homeData!.banner2[0]),
 
                     const SizedBox(height: 16),
 
-                    // 🔶 Best Selling
+                    
                     sectionTitle(
                       'Best Selling',
                       onTap: () {
@@ -323,7 +323,7 @@ class _HomePageState extends State<HomePage> {
 
                     const SizedBox(height: 16),
 
-                    // 🔶 Featured Brands
+                    
                     if (controller.homeData?.featuredBrands.isNotEmpty ??
                         false) ...[
                       sectionTitle('Top Brands'),

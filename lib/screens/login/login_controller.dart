@@ -31,7 +31,6 @@ class LoginController extends ChangeNotifier {
       isLoading = false;
       notifyListeners();
 
-      // ✅ FIXED SUCCESS CHECK
       if (res["success"] == 1) {
         final token = res["customerdata"]["token"];
         final userId = res["customerdata"]["id"].toString();

@@ -28,7 +28,7 @@ class ApiService {
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
       if (data['success'] == 1) {
-        // Handle nested structure: data['products']['products']
+        
         final productsData = data['products'];
         final productsList =
             (productsData is Map && productsData['products'] != null)
@@ -61,7 +61,7 @@ class ApiService {
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
         if (data['success'] == 1 && data['products'] is Map) {
-          // The API returns product details in the 'products' field
+          
           return Product.fromJson(data['products'] as Map<String, dynamic>);
         }
       }

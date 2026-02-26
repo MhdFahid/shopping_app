@@ -13,7 +13,6 @@ class CartController extends ChangeNotifier {
     }
     notifyListeners();
 
-    // API Sync
     if (product.slug != null) {
       await ApiService.addToCartApi(product.slug!, 1);
     }

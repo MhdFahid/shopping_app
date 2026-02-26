@@ -3,8 +3,8 @@ import 'package:provider/provider.dart';
 import '../../services/auth_service.dart';
 import '../cart/cart_controller.dart';
 import '../cart/cart_summary_page.dart';
-import '../../models/product_model.dart'; // Retained as it's used by `Product`
-import '../../services/api_service.dart'; // Retained as it's used by `ApiService`
+import '../../models/product_model.dart'; 
+import '../../services/api_service.dart'; 
 
 class ProductDetailsPage extends StatefulWidget {
   final Product product;
@@ -41,10 +41,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
         isLoading = false;
       });
 
-      // Fetch related products (e.g., from the same category)
-      // Note: We'll use a generic fetch if categorySlug isn't explicitly in the model yet,
-      // or try to match by category name if the API supports it.
-      // For now, let's fetch a few products to show.
+      
       final related = await ApiService.fetchProducts();
       if (mounted) {
         setState(() {
@@ -123,7 +120,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Image Section with Rounded Background
+                  
                   Container(
                     width: double.infinity,
                     margin: const EdgeInsets.all(16),
@@ -143,7 +140,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                             ),
                           ),
                         ),
-                        // Indicators (Placeholder dots)
+                        
                         Positioned(
                           bottom: 16,
                           left: 0,
@@ -180,7 +177,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                             ],
                           ),
                         ),
-                        // Favorite Icon
+                        
                         Positioned(
                           top: 16,
                           right: 16,
@@ -238,7 +235,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                             ),
                             const SizedBox(width: 8),
                             Text(
-                              '(14% off)', // Placeholder discount
+                              '(14% off)', 
                               style: const TextStyle(
                                 fontSize: 16,
                                 color: Color(0xFF7B3A00),
@@ -436,7 +433,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                           ],
                         ),
                         const SizedBox(height: 8),
-                        // Add Button
+                        
                         Consumer<CartController>(
                           builder: (context, cart, _) {
                             final quantity = cart.getItemQuantity(product.id);
