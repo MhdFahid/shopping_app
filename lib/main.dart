@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'utils/app_routes.dart';
+import 'package:provider/provider.dart';
+import 'screens/login/login_controller.dart';
+import 'screens/product_list/product_list_controller.dart';
+import 'screens/cart/cart_controller.dart';
+import 'screens/home/home_controller.dart';
+import 'screens/main/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,10 +15,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      initialRoute: Routes.login,
-      getPages: AppPages.pages,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => LoginController()),
+        ChangeNotifierProvider(create: (_) => ProductListController()),
+        ChangeNotifierProvider(create: (_) => CartController()),
+        ChangeNotifierProvider(create: (_) => HomeController()),
+      ],
+      child: MaterialApp(debugShowCheckedModeBanner: false, home: MainScreen()),
     );
   }
 }

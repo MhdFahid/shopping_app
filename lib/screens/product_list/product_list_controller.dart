@@ -1,23 +1,20 @@
-import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 import '../../models/product_model.dart';
 import '../../services/api_service.dart';
 
-class ProductListController extends GetxController {
-  var isLoading = false.obs;
-  var products = <Product>[].obs;
+class ProductListController extends ChangeNotifier {
+  bool isLoading = false;
+  List<Product> products = [];
 
-  @override
-  void onInit() {
-    fetchProducts();
-    super.onInit();
-  }
-
-  void fetchProducts() async {
-    isLoading.value = true;
+  Future<void> fetchProducts({String? categorySlug}) async {
+    isLoading = true;
+    products = []; // Clear existing products
+    notifyListeners();
     try {
-      products.value = await ApiService.fetchProducts();
+      products = await ApiService.fetchProducts(categorySlug: categorySlug);
     } finally {
-      isLoading.value = false;
+      isLoading = false;
+      notifyListeners();
     }
   }
 }

@@ -1,16 +1,27 @@
-# shopping_app
+# Shopping App
 
-A new Flutter project.
+Flutter shopping app with API integration and real-time cart.
 
-## Getting Started
+## 🛠 Tech
+- **Flutter**: 3.35.1
+- **State**: Provider
+- **Storage**: SharedPreferences (Auth)
 
-This project is a starting point for a Flutter application.
+## 🚀 Setup & Run
+1. `flutter pub get`
+2. `flutter run`
 
-A few resources to get you started if this is your first Flutter project:
+## 🏗 Structure
+- **Models**: Product, Category, Banner, Brand.
+- **Services**: ApiService (Products), HomeService (Dashboard).
+- **Logic**: Provider-based Controllers.
+- **UI**: Login, Home, Product List, Details, Cart, Profile.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 📝 Notes & Limitations
+- **Cart**: In-memory only (resets on restart).
+- **Images**: Dynamic network loading with fallback icons.
+- **Auth**: Token-based; stored locally for session persistence.
+- **Network**: Active internet required; no offline mode.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+*Built with Flutter*
